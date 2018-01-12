@@ -1,0 +1,87 @@
+﻿[TestFixture]
+public class FakeClass
+{
+	[SomeAttribute, Ignore("Method1")]
+	[Test]
+	public void Method1()
+	{
+	}
+
+	[Test, SomeAttribute]
+	[Ignore("Method2")]
+	public void Method2()
+	{
+	}
+
+	[SomeAttribute]
+	[Test]
+	[Ignore("Method3")]
+	public void Method3()
+	{
+	}
+
+	[SomeAttribute]
+	[Test, Ignore("Method4")]
+	public void Method4()
+	{
+	}
+
+	[Test, Ignore("Method5")]
+	public void Method5()
+	{
+	}
+
+	[Test]
+	[Ignore("Method6")]
+	public void Method6()
+	{
+	}
+
+	[Test]
+	public void Method7()
+	{
+	}
+}
+
+[Attribute1, TestFixture]
+public class FakeClass1 : FakeBaseClass1
+{
+	[Setup]
+	public void SomeFakeMethod()
+	{
+		SomeObject1.SomeMethod1();
+		SomeObject1.SomeMethod2();
+	}
+
+	[TearDown]
+	public void SomeName()
+	{
+	    SomeObject1.SomeMethod1();
+		SomeObject1.SomeMethod2();
+	}
+}
+
+[Attribute2, TestFixture]
+[Attribute1]
+public class FakeClass3
+{
+	[Setup]
+	public void Setup()
+	{
+		SomeObject1.SomeMethod1();
+		SomeObject2.SomeMethod2();
+	}
+
+	[TearDown]
+	public void SomeName()
+	{
+	    SomeObject3.SomeMethod1();
+		SomeObject3.SomeMethod2();
+	}
+}
+
+[TestFixture]
+[Attribute1]
+class FakeClass2
+{
+}

@@ -1,0 +1,23 @@
+﻿public class TestClass
+{
+    public void TestMethod()
+    {
+        Assert.That("x", Is.EqualTo("z"));
+
+		Assert.That(actual, Is.True);
+		Assert.That(actual, Is.False);
+		Assert.That(actual, Is.True, someMessage);
+		Assert.That(actual, Is.False, someMessage);
+		Assert.That(actual, Is.True, "Some message string");
+		Assert.That(actual, Is.False, "Some message string");
+
+		
+		Assert.That(actual);
+		Assert.That(actual, someMessage);
+		Assert.That(actual, "Some message string");
+		Assert.That(actual, someMessageFromat, arg1, arg2);
+		Assert.That(actual, "I am {0} message with {1}", arg1, arg2);
+		Assert.That(actual, someMessageFromat, arg1);
+		Assert.That(actual, "I am {0} message", arg1);
+    }
+}

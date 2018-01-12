@@ -1,0 +1,20 @@
+﻿public class TestClass
+{
+    public void TestMethod()
+    {
+        Assert.Equal("z", "x");
+        Assert.True(actual);
+        Assert.False(actual);
+        Assert.True(actual, someMessage);
+        Assert.False(actual, someMessage);
+        Assert.True(actual, "Some message string");
+        Assert.False(actual, "Some message string");
+        Assert.True(actual);
+        Assert.True(actual, someMessage);
+        Assert.True(actual, "Some message string");
+        Assert.True(actual, string.Format(someMessageFromat, arg1, arg2));
+        Assert.True(actual, string.Format("I am {0} message with {1}", arg1, arg2));
+        Assert.True(actual, string.Format(someMessageFromat, arg1));
+        Assert.True(actual, string.Format("I am {0} message", arg1));
+    }
+}

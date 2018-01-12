@@ -1,0 +1,75 @@
+﻿public class FakeClass
+{
+    [SomeAttribute]
+    [Fact(Skip = "Method1")]
+    public void Method1()
+    {
+    }
+
+    [Fact(Skip = "Method2"), SomeAttribute]
+    public void Method2()
+    {
+    }
+
+    [SomeAttribute]
+    [Fact(Skip = "Method3")]
+    public void Method3()
+    {
+    }
+
+    [SomeAttribute]
+    [Fact(Skip = "Method4")]
+    public void Method4()
+    {
+    }
+
+    [Fact(Skip = "Method5")]
+    public void Method5()
+    {
+    }
+
+    [Fact(Skip = "Method6")]
+    public void Method6()
+    {
+    }
+
+    [Fact]
+    public void Method7()
+    {
+    }
+}
+
+[Attribute1]
+public class FakeClass1 : FakeBaseClass1, IDisposable
+{
+    public FakeClass1()
+    {
+        SomeObject1.SomeMethod1();
+        SomeObject1.SomeMethod2();
+    }
+    public void Dispose()
+    {
+        SomeObject1.SomeMethod1();
+        SomeObject1.SomeMethod2();
+    }
+}
+
+[Attribute2]
+[Attribute1]
+public class FakeClass3 : IDisposable
+{
+    public FakeClass3()
+    {
+        SomeObject1.SomeMethod1();
+        SomeObject2.SomeMethod2();
+    }
+    public void Dispose()
+    {
+        SomeObject3.SomeMethod1();
+        SomeObject3.SomeMethod2();
+    }
+}
+[Attribute1]
+public class FakeClass2
+{
+}
